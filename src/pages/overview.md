@@ -29,4 +29,4 @@ The general approach that we advocate can be seen as a special implementation of
 * [Pattern Theory: From representation to inference](https://oxford.universitypressscholarship.com/view/10.1093/oso/9780198505709.001.0001/isbn-9780198505709)
 
 Another good introduction on pattern Theory is given in the book by D. Mumford and A. Desolneux:
-* [Pattern theory: The stochastic analysis of real world signal]("https://www.goodreads.com/book/show/9046935-pattern-theory")
+* [Pattern theory: The stochastic analysis of real world signal](https://www.goodreads.com/book/show/9046935-pattern-theory)

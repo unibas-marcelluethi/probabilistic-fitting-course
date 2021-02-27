@@ -1,8 +1,12 @@
+const math = require('remark-math')
+const katex = require('rehype-katex');
+
+
 module.exports = {
   title: 'Probabilistic shape model fitting',
   tagline: 'Online course',
-  url: 'https://shapemodelling.cs.unibas.ch/probabilistic-fitting-course/',
-  baseUrl: '/',
+  url: 'https://shapemodelling.cs.unibas.ch/',
+  baseUrl: '/probabilistic-fitting-course/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
@@ -98,6 +102,11 @@ module.exports = {
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
+        pages: {
+          remarkPlugins: [math],
+          rehypePlugins: [katex],
+        },
+
       },
     ],
   ],
