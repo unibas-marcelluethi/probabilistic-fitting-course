@@ -49,5 +49,5 @@ Each of the probabilitiy distributions are simple to specify
 
 In this form it is now easy to add additional parameters, such as pose. We simply need to specify a new prior
 Note, however, that while we can easily sample from this distribution, by first sampling the prior parameters and then 
-the liekliehood it is not easy to derive an explicit form as it was from standad Gaussian process regression. 
+the likeliehood it is not easy to derive an explicit form as it was from standad Gaussian process regression. 
 However, as we will discuss in the next week, it is still possible to obtain samples from it. 

@@ -19,6 +19,12 @@ The course is structured as follows
 * [Week 3: Markov Chain Monte Carlo Methods for shape model fitting](week3/week3)
 * [Week 4: Designing effective proposals for shape model fitting](week4/week4)
 
+#### Software
+
+As the previous course, also this course is based on the Scalismo open source software. 
+However, our code examples do not use ScalismoLab, but the most recent version of Scalismo. You 
+can find information on how to use Scalismo as a library from within an IDE on the [Scalismo website](https://scalismo.org).
+
 #### Related Literature
 
 The probabilistic approach to shape model fitting that we discuss here has been developed as part of the PhD Thesis of Sandro Schönborn, at the University of Basel:

@@ -9,9 +9,18 @@ module.exports = {
   baseUrl: '/probabilistic-fitting-course/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/face-favicon.jpg',
   organizationName: 'gravis-unibas', // Usually your GitHub org/user name.
   projectName: 'provabilistic-fitting-course', // Usually your repo name.
+  stylesheets: [
+    {
+      href: 'https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css',
+      type: 'text/css',
+      integrity:
+        'sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X',
+      crossorigin: 'anonymous',
+    },
+  ],
   themeConfig: {
     navbar: {
       title: 'PSM-Fitting Course',
@@ -26,6 +35,7 @@ module.exports = {
           label: 'Docs',
           position: 'left',
         },*/
+        {to: 'overview', label : 'Introduction', position: 'left'},
         {to: 'week1/week1', label: 'Week 1', position: 'left'},
         {to: 'week2/week2', label: 'Week 2', position: 'left'},
         {to: 'week3/week3', label: 'Week 3', position: 'left'},

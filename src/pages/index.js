@@ -15,7 +15,8 @@ const features = [
       <>
         Where we discuss the analysis by synthesis 
         paradigm to shape and image analysis and given 
-        an introduction to Bayesian inference.
+        an introduction to Bayesian inference.        
+        
       </>
     ),
   },
