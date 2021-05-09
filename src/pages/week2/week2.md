@@ -12,7 +12,7 @@ In this week we will discuss Markov Chain Monte Carlo methods, and in particular
 #### Steps
 1. The Metropolis-Hastings algorithm ([Video](https://tube.switch.ch/videos/zxTAQ2uF7B), [Slides](slides/metropolis-hastings.pdf))
 2. Implementing and experimenting with the Metropolis Hastings algorithm (Jupyter-Notebook: [View](https://nbviewer.jupyter.org/github/unibas-marcelluethi/probabilistic-shape-modelling-notebooks/blob/master/notebooks/Metropolis.ipynb),  [Run in browser](https://mybinder.org/v2/gh/unibas-marcelluethi/probabilistic-shape-modelling-notebooks/master?filepath=notebooks/Metropolis.ipynb))
-3. Properties and limitations of the Metropolis-hastings algorithm  ([Video](https://tube.switch.ch/videos/Kv2FpCrKPG), [Slides](slides/mh-propoerties.pdf))
+3. Properties and limitations of the Metropolis-hastings algorithm  ([Video](https://tube.switch.ch/videos/Kv2FpCrKPG), [Slides](slides/properties-mh.pdf))
 4. Using the Metropolis-Hastings in Scalismo ([Tutorial](https://scalismo.org/docs/tutorials/tutorial14))
 <!-- 5. Posterior predictive checks ([Tutorial](tobedone))
 -->
