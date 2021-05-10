@@ -99,7 +99,7 @@ is Gaussian noise.
 We recognize that this is another linear regression model, as it is linear in the parameters $\alpha_i$.
 The corresponding likelihood function is
 $$
-p(x_i^T | \alpha, x_i^R, \sigma^2) = N(u(x_i)[\alpha], \sigma^2) = N(\mu(x_i) + \sum_{j=1}^r \alpha_j \sqrt{\lambda_j} \varphi_j(x_i), \sigma^2).
+p(x_i^T | \alpha, x_i^R, \sigma^2) = N(x_i^R + u(x_i)[\alpha], \sigma^2) = N(x_i^R + \mu(x_i^R) + \sum_{j=1}^r \alpha_j \sqrt{\lambda_j} \varphi_j(x_i^R), \sigma^2).
 $$
 The prior on the shape parameters is, by assumption above,
 $$
