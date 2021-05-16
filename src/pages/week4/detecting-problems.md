@@ -6,12 +6,13 @@ title: Detecting and mitigating problems in sampling pipelines
 # Detecting problems in the sampler
 
 
-Let's assume that we have specified our model and also set up a sampler by defining proposal distribution  for the Metropolis-Hastings algorithm. This is all we need and we can start drawing samples from the posterior distribution. Irrespective how challenging our problem is, and whether we have chosen appropriate
-proposal distributions, the Metropolis-Hastings algorithm will happily produce samples. 
+Let's assume that we have specified our model and also set up a sampler by defining proposal distribution  for the Metropolis-Hastings algorithm. This is all we need and we can start drawing samples from the posterior distribution. Irrespective of how challenging our problem is, and whether we have chosen appropriate proposal distributions, the Metropolis-Hastings algorithm will always happily produce some samples. The question is, whether these samples are really samples from our desired target distribution. 
+This property is guaranteed when we sample for infinitely long time, but for any finite amount of time we 
+need some diagnostics to really find out. 
 
-To find out, that your sampler really does the right thing, we need to do two things:
-1. making sure the samples follow the target distribution
-2. checking that the proposals we use are efficient in producing samples
+In this article we discuss how we can
+1. make sure the samples follow the target distribution
+2. check that the proposals we use are efficient in producing samples.
 
 Step 2 is necessary, because even if our chain eventually converges to the target distribution, it does not imply that all the proposals we have specified are efficient at proposing likely next states. The reason is that the Metropolis-Hastings algorithm will simply reject proposed samples that are not likely. 
 
@@ -40,10 +41,6 @@ Contrast this with a more successful run (Figure 2, right). After the burn-in ph
 ![traceplots](images/traceplots.png)<figcaption>Figure 2: Traceplots for a sampler that is not properly set up (left) and a better tuned sampler (right). The blue-shaded area depicts the burn-in phase.</figcaption>
 
 
-We see that after a burn-in phase, the sampler explores different parts of the distribution. Most of the time it spends in regions with high probability, but sometimes it also ventures into regions with lower probability. The fluctuations we see are a sign that we are exploring the distribution, rather than getting stuck at just one place of the distribution. Compare this to the plot shown in Figure 2 (right).
-Here, the values are monotonically increasing. This means that either we have not passed the burn-in phase yet, or the sampler is not able to explore the distribution (no sample is ever accepted that goes back 
-into a lower-probability region). 
-
 
 ### Acceptance rates
 
@@ -51,7 +48,7 @@ One factor that complicates diagnosing problems with Metropolis-Hastings chains 
 that we could end up with proposals that are rejected most of the times, while the sampler still produces a good approximation of the target distribution. Although we get at the end the desired solution, the sampler is still less efficient than it should be. 
 
 The easiest way to diagnose this problem is to log the acceptance and rejections of a sample and then compute diagnostics based on it. A particular simple one is the accept/reject ratio. If this ratio is low, 
-we know that the corresponding proposal is likely to be inefficient and we may want to change its parameters. What the ideal accept/reject ratio is, depends on the proposal. For a simple random walk proposal, it can be shown that the most efficient chains accepts the sample around 20% of the time.<sup><a href="gelman-convergence">3</a></sup>. For other proposal, rates could be rather different. If a proposal step is expensive to compute, we expect it to more often produce a good update step. It should therefore lead to a much higher acceptance rate. Note however, that an acceptance rate of 100% is also not desireable. This would mean that the proposal is accepted every time, effectively proposing only proposals in a direction of increasing probability. For such proposal, the algorithm would degenerate into a hill-climbing algorithm, and eventually get stuck in a local optimum, unable to explore the full distribution. 
+we know that the corresponding proposal is likely to be inefficient and we may want to change its parameters. What the ideal accept/reject ratio is, depends on the proposal. For a simple random walk proposal, it can be shown that the most efficient chains accepts the sample around 20% of the time.<sup><a href="#gelman-convergence">3</a></sup>. For other proposal, the optimal rates could be very different. If a proposal step is expensive to compute, we expect it to more often produce a good update step. It should therefore lead to a much higher acceptance rate. Note however, that an acceptance rate of 100% is also not desireable. This would mean that the proposal is accepted every time, effectively proposing only proposals in a direction of increasing probability. For such proposal, the algorithm would degenerate into a hill-climbing algorithm, and eventually get stuck in a local optimum, unable to explore the full distribution. 
 
 In our example, the acceptance rate for the unsuccessful case, we have the following acceptance rats:
 

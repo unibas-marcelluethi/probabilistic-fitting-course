@@ -33,7 +33,7 @@ This sequence of updates can be implemented efficiently using the Metropolis-Has
 
 ![metropolis-filter](images/filtering.png)<figcaption>Figure 1: Illustration of the Metropolis-filter.</figcaption>
 
-It can be shown that this procedure converges to the desired posterior distribution $p(\theta | M_1, M_2)$ (see e.g. Schönborn, Section 5.3.4<sup><a href="schoenborn-thesis">1</a></sup>). The advantage of this implementation is clear: We do not have to compute the likelihoods in the later stages when a sample is already rejected in the first step of the filtering algorithm. 
+It can be shown that this procedure converges to the desired posterior distribution $p(\theta | M_1, M_2)$ (see e.g. Schönborn, Section 5.3.4<sup><a href="#schoenborn-thesis">1</a></sup>). The advantage of this implementation is clear: We do not have to compute the likelihoods in the later stages when a sample is already rejected in the first step of the filtering algorithm. 
 
 
 ### Implementation in Scalismo

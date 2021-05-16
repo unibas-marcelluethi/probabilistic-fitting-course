@@ -6,7 +6,7 @@ title: Simple sampling strategies for shape model fitting
 # Simple sampling strategies for shape model fitting
 
 In this article we discuss two simple strategies for designing sampling chains using the Metropolis-Hastings algorithm. The first ones is the use of mixture proposals, and the second one
-is running several chains in sequences. 
+is running several chains in sequence. 
 
 ### Mixture proposal and block-wise sampling
 
@@ -16,14 +16,14 @@ $$Q_M(\theta'| \theta) = \sum_{i=1}^n \lambda_i Q_i(\theta' | \theta)$$
 
 with $\sum_{i=1}^n \lambda_i = 1,\, 0 < \lambda_i \le 1$. Here, a proposal $Q_i(\theta'|\theta)$ is selected randomly with a probability $\lambda_i$. 
 
-Using these different proposals, we can bring variety into our proposals and hopefully achieve a mixture of different behaviors, which lead to an exploration of the space which is more efficient than any single proposal could do. 
+Using these different proposals, we can bring variety into our proposals and achieve a mixture of different behaviors. The hope is that the mixture leads to an exploration of the space which is more efficient than what any single proposal alone could achieve. 
 
 Mixture proposals give rise to two main strategies: Block-wise proposals and multi-scale proposals.
 
 #### Block-wise proposal
 
 In shape model fitting applications, we are usually dealing with a high-dimensional parameter space. That a model has 200 parameters or more is not untypical. Due to the curse of dimensionality, perturbing all the parameters at once is likely to sharply change the density value and hence lead to rejection of the proposed sample. The idea behind block-wise proposals is to update only a part of the parameter space 
-at once. Assume for example that the parameter vector $\theta =(t_x, t_y, t_z, R_\psi, R_\theta R_\rho, \alpha_1, \alpha_n)$ consists of translation parameters $t_x, t_y, t_z$, rotation parameters $R_\psi$, R_\theta, R_\rho$ and parameters for the shape model coefficients $\alpha_1, \ldots, \alpha_n$. We might 
+at once. Assume for example that the parameter vector $\theta =(t_x, t_y, t_z, R_\psi, R_\theta, R_\rho, \alpha_1, \ldots, \alpha_n)$ consists of translation parameters $t_x, t_y, t_z$, rotation parameters $R_\psi, R_\theta, R_\rho$ and parameters for the shape model coefficients $\alpha_1, \ldots, \alpha_n$. We might 
 design a proposal $Q_t$, which only updates the translation parameters, one proposal $Q_R$ which only updates rotation parameters and a proposal $Q_\alpha$, which only updates the shape parameters. The final proposal would then be the mixture proposal 
 
 $$
