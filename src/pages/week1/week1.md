@@ -17,8 +17,8 @@ In this week we will discuss the architecture of an analysis-by-synthesis applic
 approach using Bayesian inference.
 
 #### Steps
-1. Analysis-by-synthesis ([Video](https://tube.switch.ch/videos/9mttZuUJiQ), [Slides](/slides/week1/analysis-by-synthesis.pdf))
-2. Bayesian probabiliy ([Video](https://tube.switch.ch/videos/d08MaERkkD), [Slides](slides/week1/bayesian-probability.pdf))
+1. Analysis-by-synthesis ([Video](https://unibas.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=2c1b7080-3ab1-40d3-94c3-af9300b37b6d), [Slides](/slides/week1/analysis-by-synthesis.pdf))
+2. Bayesian probabiliy ([Video](https://unibas.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=0739aa82-efda-4e47-a09d-af9300b36d9c), [Slides](/slides/week1/bayesian-probability.pdf))
 3. Shape model fitting as Bayesian linear regression ([Article](/week1/linearregression))
 
 #### Questions and remarks

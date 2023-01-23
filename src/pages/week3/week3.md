@@ -17,7 +17,7 @@ to fit a model to an image.
 
 
 #### Steps
-1. Case study: Shape model fitting ([Video](https://tube.switch.ch/videos/lSbzhsly0W), [Slides](/slides/week3/shape-model-fitting.pdf))
+1. Case study: Shape model fitting ([Video](https://unibas.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=a1083ba8-5b41-4c60-8c00-af9300b36d92), [Slides](/slides/week3/shape-model-fitting.pdf))
 2. Implementing shape model fitting in Scalismo using the Metropolis-Hastings algorithm ([Tutorial](https://scalismo.org/docs/tutorials/tutorial15))
 3. A likelihood based on Active Shape Models ([Article](/week3/asm))
 <!-- 4. Debugging Metropolis-Hastings based fitting algorithms ([Article](mh-debugging)) -->
